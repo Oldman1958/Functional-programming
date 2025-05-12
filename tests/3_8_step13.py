@@ -8,8 +8,8 @@
 
 
 def print_scores(name, *args):
-    print(f'Student name: {name}')
-    print(*sorted(args), sep='\n')
+    print(f'Student name: {name}', *sorted(args), sep='\n')
+
 
 
 print_scores("Jud", 100, 95, 88, 92, 99)
