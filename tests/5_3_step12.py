@@ -8,7 +8,7 @@
 Ничего кроме создания переменной check_word делать не нужно
 """
 
-check_word = lambda s: True if s[0] in ('QRqr') and s[-1] in ('AEIUOaeiuo') else False
+check_word = lambda s: True if s[0] in 'QRqr' and s[-1] in 'AEIUOaeiuo' else False
 
 print(check_word.__name__)
 print(check_word('radio'))
