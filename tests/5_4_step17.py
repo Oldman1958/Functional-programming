@@ -18,8 +18,6 @@
 Цена должна выводиться с точностью до двух знаком после запятой
 """
 
-# price = 10
-# print(f'{float(price):.2f}')
 
 def print_goods(lst):
     res = tuple(sorted(lst, key=lambda x: (-float(x.split(': ')[1]), x.split(': ')[0].lower())))
