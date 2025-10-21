@@ -14,24 +14,51 @@
 
 def print_order_rating(tpl):
     dct = {}
-    for k, v in tpl:
+    '''
+        Сначала решил так:
+        for k, v in tpl:
         if k not in dct:
             dct[k] = [v]
         elif k in dct:
             dct[k].append(v)
+            
+        Потом немного подумал, покурил интернет и решил так:
+    '''
+    for key, value in tpl:
+        dct.setdefault(key, []).append(value)
 
     res = sorted(dct.items(), key=lambda x: (-sum(x[1])/len(x[1]), x[0].lower()))
     for k, v in res:
-        print(f"{k} {(sum(v)/len(v)):.1f}")
+        print(f"{k} {(sum(v)/len(v))}")
 
 
 
 drivers = [
     ('Джек', 2),
     ('Джек', 3),
-    ('Билл', 5),
+    ('Гермиона', 5),
     ('Билл', 4),
     ('Билл', 4),
+    ('Гермиона', 3),
+    ('Джек', 2),
+    ('ЯЯ', 5),
+    ('ФФФ', 5),
+    ('Билл', 4),
+    ('Укк', 4),
+    ('Билл', 3),
+    ('Джек', 2),
+    ('Джек', 2),
+    ('Гермиона', 5),
+    ('Билл', 2),
+    ('ФФФ', 4),
+    ('Билл', 3),
+    ('ФФФ', 3),
+    ('Джек', 2),
+    ('Джек', 1),
+    ('Гермиона', 5),
+    ('Билл', 2),
+    ('Курт', 5),
     ('Билл', 3),
 ]
 print_order_rating(drivers)
+
