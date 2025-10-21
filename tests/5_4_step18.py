@@ -28,10 +28,4 @@ laureates = {'За лучший фильм': 'Все везде и сразу',
              'За лучший оригинальный сценарий': 'Все везде и сразу',
              'За лучший фильм на иностранном языке': 'Все везде и сразу', }
 
-'''
-res = Counter(dict.values(laureates))
-print(f'{res.most_common()[0][0]}, {res.most_common()[0][1]}')
-print(f'{res.most_common()[-1][0]}, {res.most_common()[-1][1]}')
-'''
-
 print_best_and_worst_laureate(laureates)
