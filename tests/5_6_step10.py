@@ -52,6 +52,7 @@ def calculate(x, y, operation='a'):
 
     if operation == 'a':
         addition(x, y)
+
     elif operation == 's':
         subtraction(x, y)
     elif operation == 'd':
