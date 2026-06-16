@@ -10,7 +10,7 @@
 def countdown(n):
     total = n
     def inner():
-        nonlocal total, n
+        nonlocal total
         if total > 0:
             print(total)
             total -= 1
