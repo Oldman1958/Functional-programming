@@ -1,0 +1,75 @@
+"""
+Декоратор check_count_args
+Напишите декоратор check_count_args, который проверяет количество переданных аргументов.
+Проверка заключается в следующем
+
+в оригинальную функцию должно быть передано только два аргумента и неважно позиционно или по ключу.
+Если это условие выполняется, возвращаем результат вызова оригинальной функции
+
+Если передано меньшее количество,
+декоратор должен вывести строку «Not enough arguments» и не должен запускать оригинальную функцию;
+
+Если передано более двух аргументов,
+то декоратор должен вывести строку «Too many arguments» и не должен запускать оригинальную функцию.
+Не забывайте сохранять имя функции и строку документации.
+Для решения необходимо написать только реализацию декоратора check_count_args
+"""
+
+
+from functools import wraps
+
+
+def check_count_args(func):
+    @wraps(func)
+    def inner(*args, **kwargs):
+        if len(args) + len(kwargs) > 2:
+            print("Too many arguments")
+
+        elif len(args) + len(kwargs) < 2:
+            print("Not enough arguments")
+
+        elif len(args) + len(kwargs) == 2:
+            return func(*args, **kwargs)
+        return None
+
+    return inner
+
+
+@check_count_args
+def add_numbers(x, y):
+    """Return sum of x and y"""
+    return x + y
+
+
+print(add_numbers(4, 5))
+print(add_numbers.__name__)
+print(add_numbers.__doc__.strip())
+
+
+@check_count_args
+def add_numbers(x, y):
+    """Return sum of x and y"""
+    return x + y
+
+
+print(add_numbers(6, y=7))
+print(add_numbers.__name__)
+print(add_numbers.__doc__.strip())
+
+
+@check_count_args
+def add_numbers(x, y):
+    """Return sum of x and y"""
+    return x + y
+
+
+add_numbers(4)
+
+
+@check_count_args
+def add_numbers(x, y):
+    """Return sum of x and y"""
+    return x + y
+
+
+add_numbers(3, 5, 6)
