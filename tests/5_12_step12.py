@@ -25,7 +25,7 @@ def validate_all_args(type_):
         def wrapper(*args, **kwargs):
             if all(isinstance(arg, type_) for arg in args):
                 return func(*args, **kwargs)
-            print('Все аргументы должны быть строками')
+            print(f'Все аргументы должны принадлежать типу {type_}')
             return None
 
         return wrapper
