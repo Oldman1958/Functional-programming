@@ -1,17 +1,41 @@
 """
-Напишите функцию filter_words, которая принимает список строк и возвращает новый список,
-который состоит из строк, длина которых четыре символа, или начинающихся на заглавную букву S.
+Перед вами имеется реализация функции get_values
+
+Ваша задача — избавиться от циклов for при помощи map и filter.
+Для этого перепишите функцию get_values, но так,
+чтобы она не меняла свою изначальную функциональность
+
+def get_values(nums: tuple[int, ...]) -> tuple[int, ...]:
+    lst = []
+    for i in nums:
+        if i % 3 == 0:
+            lst.append(i)
+
+    for i in range(len(lst)):
+        lst[i] = lst[i] * 3
+
+    return tuple(lst)
+
 """
 
 
-def filter_words(strings):
-    return list(filter(lambda x: len(x) == 4 or x.startswith('S'), strings))
+def get_three(x):
+    return x * 3
 
 
-days = ['One', 'Two', 'Three', 'Four', 'Five', 'Six',
-        'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve']
-print(filter_words(days))
+def get_values(nums: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(map(get_three, filter(lambda x: x % 3 == 0, nums)))
 
-words = ['scheme', 'hypnothize', 'exposure', 'Syndrome',
-         'Save', 'speculate', 'cane', 'welfare', 'blame', 'core']
-print(filter_words(words))
+"""
+Альтернативное решение (одно из них):
+
+def get_values(nums: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(map(lambda x: x * 3, filter(lambda x: not x % 3, nums)))
+"""
+
+
+nums = (2, 12, 5, 9, 3, 16, 7, 13, 21, 1, 15, 4, 20, 11)
+print(get_values(nums))
+
+nums = (2, 0, 3, 4, 7, 13, 21, 1, 15, 9, 11)
+print(get_values(nums))

@@ -1,15 +1,17 @@
 """
-Напишите функцию filter_numbers, которая принимает список целых чисел и возвращает новый список,
-который состоит только из четных чисел входного списка или из тех, которые по модулю больше 100.
+Напишите функцию filter_words, которая принимает список строк и возвращает новый список,
+который состоит из строк, длина которых четыре символа, или начинающихся на заглавную букву S.
 """
 
 
-def filter_numbers(numbers):
-    return list(filter(lambda x: x % 2 == 0 or abs(x) > 100, numbers))
+def filter_words(strings):
+    return list(filter(lambda x: len(x) == 4 or x.startswith('S'), strings))
 
 
-numbers = [1, 2, 3, 4, 5, 6, 7]
-print(filter_numbers(numbers))
+days = ['One', 'Two', 'Three', 'Four', 'Five', 'Six',
+        'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve']
+print(filter_words(days))
 
-numbers = [-100, 2, -300, -400, 5, -60, -61, -101, 101]
-print(filter_numbers(numbers))
+words = ['scheme', 'hypnothize', 'exposure', 'Syndrome',
+         'Save', 'speculate', 'cane', 'welfare', 'blame', 'core']
+print(filter_words(words))
