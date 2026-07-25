@@ -26,6 +26,13 @@ def get_three(x):
 def get_values(nums: tuple[int, ...]) -> tuple[int, ...]:
     return tuple(map(get_three, filter(lambda x: x % 3 == 0, nums)))
 
+"""
+Альтернативное решение (одно из них):
+
+def get_values(nums: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(map(lambda x: x * 3, filter(lambda x: not x % 3, nums)))
+"""
+
 
 nums = (2, 12, 5, 9, 3, 16, 7, 13, 21, 1, 15, 4, 20, 11)
 print(get_values(nums))
