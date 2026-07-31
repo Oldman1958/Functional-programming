@@ -27,6 +27,11 @@ zip_with_function([[1, 2, 4], [3, 5, 8]], get_sum_two_numbers)
 def zip_with_function(lst, func):
     return list(func(*args) for args in zip(*lst))
 
+"""
+Решение без for, но с map.
+def zip_with_function(ms: list[list], func) -> list:
+    return list(map(lambda x: func(*x), zip(*ms)))
+"""
 
 def get_sum_two_numbers(a, b):
     return a + b
