@@ -11,7 +11,7 @@
 Ваша задача только написать определение рекурсивной функции multu_recursive
 """
 
-
+# Решение костыльное, но самостоятельное :)
 def multu_recursive(lst):
     total = 1
     for value in lst:
