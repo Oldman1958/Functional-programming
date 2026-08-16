@@ -8,7 +8,6 @@
 """
 
 
-
 def sum_recursive(lst):
     total = 0
     for value in lst:
@@ -24,7 +23,6 @@ def sum_recursive(lst):
             total += value
 
     return total
-
 
 
 print(sum_recursive([1, 2, 3, 4, 5]))
