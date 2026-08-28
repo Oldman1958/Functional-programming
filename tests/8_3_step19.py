@@ -26,7 +26,7 @@ print(coro.send(987))
 print(coro.send(1))
 print(coro.send(1234321))
 
-"""coro = is_palindrome()
+coro = is_palindrome()
 next(coro)
 for num in [1, 12, 123, 1221, 45654, 999]:
-    print(coro.send(num))"""
+    print(coro.send(num))
